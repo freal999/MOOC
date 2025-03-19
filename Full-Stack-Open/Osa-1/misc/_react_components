@@ -1,0 +1,33 @@
+// React-komponentteja..
+
+// juurikomponentti
+const App = () => {
+  console.log('App')
+  const friends =[
+    {nimi: "Pekka", ika: 75},
+    {nimi: "Maija", ika: 99}
+  ]
+
+  return (
+    <>
+      <h1>Greetings</h1>
+      <Hello name={friends[0].nimi} age={friends[1].ika} />
+      <Hello name={friends[1].nimi} age={friends[0].ika} />
+    </>
+  )
+}
+
+// apukomponentti
+const Hello = (name, age) => {
+  console.log('Hello', {props})
+  const bornYear = () =>  new Date().getFullYear() - age
+  return (
+      <div>
+        <p>Hello, {name}, you are {age} years old!<br>
+        </br>So you were probably born {bornYear()}</p>
+      </div>
+  )
+}
+
+// ei toimi ilman exporttia
+export default App

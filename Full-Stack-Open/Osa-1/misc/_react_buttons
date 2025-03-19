@@ -1,0 +1,26 @@
+// _react_buttons
+import { useState } from "react" // import state hook
+
+const Display = ({counter}) => <div>{counter}</div>
+const Button = ({onClick,text}) => <button onClick={onClick}> {text}</button>
+
+const App = () => {
+  
+  console.log("App..")
+  
+  const [counter, setCounter] = useState(0) // implement state hook
+  
+  const increment = () => setCounter(counter+1)
+  const decrement = () => setCounter(counter-1)
+  const reset = () => setCounter(0)
+
+  return (
+    <div>
+      <Display counter={counter}/>
+      <Button onClick={decrement} text="-"/>
+      <Button onClick={increment} text="+"/>
+      <Button onClick={reset} text="reset"/>
+    </div>
+  )
+}
+export default App
