@@ -28,3 +28,5 @@ old/
 
 README.md
 .gitignore
+eslint.config.js
+vite.config.js
